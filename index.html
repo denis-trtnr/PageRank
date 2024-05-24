@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive PageRank Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="container right-align">
+            <a href="info.html"><i class="fas fa-info-circle fa-2x"></i></a>
+            <a href="https://github.com"><i class="fab fa-github fa-2x"></i></a>
+        </div>
+    </header>
+    <div id="main-container" class="container">
+        <h2 class="center-align">Interactive PageRank Demo</h2>
+        <div id="content" class="section">
+            <p>Use the interactive graph to create nodes and analyze the PageRank.</p>
+            <p>Click <a href="info.html">here</a> for more information regarding usage and credits</p>
+        </div>
+        <div id="sliders" class="row">
+            <div class="slider-container col s12 m6">
+                <label for="damping_value">Damping Value</label>
+                <p class="range-field">
+                    <input id="damping_value" type="range" min="0" max="1" value="0.85" step="0.025"
+                        onchange="showValue('dampValue', this.value)">
+                </p>
+                <span id="dampValue" class="teal-text">0.85</span>
+            </div>
+            <div class="slider-container col s12 m6">
+                <label for="precision_value">Precision</label>
+                <p class="range-field">
+                    <input id="precision_value" type="range" min="1" max="8" value="3" step="1"
+                        onchange="showValue('precisionValue', this.value)">
+                </p>
+                <span id="precisionValue" class="teal-text">3</span>
+            </div>
+        </div>
+        <div id="graphDiv" class="card-panel white"></div>
+        <div id="content" class="section">
+            <div id="pagerankTableContainer">
+                <table id="pagerankTable" class="highlight centered">
+                </table>
+            </div>
+        </div>
+    </div>
+    <button id="fly-button" class="btn waves-light teal" onclick="displayPageRank()">
+        <i class="material-icons">Recalculate</i>
+    </button>
+
+    <script>
+        function showValue(spanID, newValue) {
+            document.getElementById(spanID).textContent = newValue;
+        }
+    </script>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="src/vectors.js"></script>
+    <script src="src/pagerank.js"></script>
+    <script src="src/visualization.js"></script>
+    <script src="src/results.js"></script>
+</body>
+
+</html>
