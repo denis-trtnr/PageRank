@@ -1,6 +1,7 @@
 # Interactive PageRank Demo 📊
 
-Welcome to our interactive PageRank demo! This demo illustrates the concept of PageRank, a key algorithm used by search engines to rank web pages in their search results.
+Welcome to my interactive PageRank demo! This demo illustrates the concept of PageRank, a key algorithm used by search engines to rank web pages in their search results.
+This demo was created as a student project for the lecture "Advanced Data Mining & Web Mining" at DHBW CAS
 
 ### What is PageRank? 🌐
 
@@ -34,6 +35,7 @@ This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) 
 
 ### Credits 🙏
 
+- [Initial Paper](https://www.sciencedirect.com/science/article/abs/pii/S016975529800110X)
 - [PageRank Explanation](https://www.youtube.com/watch?v=urKLHNhUEQ0)
 - [Graph Visualization Script](http://bl.ocks.org/rkirsling/5001347)
 - [Inspirations](https://github.com/nuric)
